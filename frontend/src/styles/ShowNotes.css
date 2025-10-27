@@ -1,0 +1,6 @@
+.notes {
+    background-color: white;
+    color:black;
+    display:flex;
+    gap: 50px;
+}

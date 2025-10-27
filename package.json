@@ -1,0 +1,23 @@
+{
+  "name": "note-app",
+  "private": true,
+  "scripts": {
+    "start": "concurrently \"npm:server\" \"npm:client\"",
+    "server": "npm --prefix backend run dev",
+    "client": "npm --prefix frontend run dev",
+
+    "build": "npm --prefix backend run build && npm --prefix frontend run build",
+    "preview": "concurrently \"npm:preview:frontend\" \"npm:start:backend\"",
+    "preview:frontend": "npm --prefix frontend run preview",
+    "start:backend": "npm --prefix backend run start",
+
+    "install:all": "npm --prefix backend i && npm --prefix frontend i"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.2",
+    "mongoose": "^8.18.2"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
